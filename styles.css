@@ -1,0 +1,35 @@
+#fire {
+  object-fit: cover;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+#landing {
+  position: relative;
+  height: 100vh;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#landing img {
+   max-width: 95%;
+   max-height: 80vh;
+}
+
+#landing button {
+   position: absolute;
+   bottom: 0;
+   font-family: 'Cinzel Decorative', cursive, sans-serif;
+   color: #c48c15;
+   background-color: transparent;
+   border: 1px solid #c48c15;
+   font-size: 2rem;
+   letter-spacing: 10px;
+   border-radius: 3px;
+   margin: 50px;
+}
