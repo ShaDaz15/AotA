@@ -21,9 +21,14 @@
     <div>
       <img src="./assets/Apostles_Logo.png" alt="AotA logo">
     </div>
-    <button class="btn">ENTER</button>
+    <button id="enter" class="btn">ENTER</button>
   </header>
 
+  <script>
+    document.getElementById("enter").onclick = function() {
+      location.href = "home.html";
+    }
+  </script>
   <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
     integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"

@@ -1,3 +1,5 @@
+/* Landing Page */
+
 #fire {
   object-fit: cover;
   width: 100vw;
@@ -17,7 +19,7 @@
 }
 
 #landing img {
-   max-width: 95%;
+   max-width: 90%;
    max-height: 80vh;
 }
 
@@ -32,4 +34,10 @@
    letter-spacing: 10px;
    border-radius: 3px;
    margin: 50px;
+}
+
+/* Home Page */
+
+img {
+  width: 80%;
 }
