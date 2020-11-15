@@ -40,8 +40,138 @@
          </div>
       </nav>
    </header>
-   <main>
-      <h1>Apply goes here!!!</h1>
+   <main class="container">
+      <h1>GUILD APPLICATION</h1>
+      <form>
+         <div class="form-group mt-3">
+            <label for="discord">Discord ID (include #0000)</label>
+            <input type="text" class="form-control col-md-6" id="discord" aria-describedby="Discord ID" placeholder="GamerMan #1234">
+         </div>
+
+         <div class="form-group mt-3">
+            <label for="accessLevel" class="mb-0">Do you own or will you be purchasing Alpha or Beta acess or Streaming when the NDA is lifted for Guild-Mates to learn with you?</label>
+            <small id="accessSub" class="form-text text-muted mb-2">This is not required to join the Guild</small>
+            <select class="form-control" id="accessLevel">
+               <option selected disabled hidden>Please Choose Level of Access</option>
+               <option>Do not plan to buy or stream Alpha/ Beta</option>
+               <option>Have Alpha 1 access already</option>
+               <option>Have/ Will purchase Alpha 2 access</option>
+               <option>Have/ Will purchase Beta access</option>
+               <option>Will be streaming or can stream Alpha 1, Alpha 2, or Beta</option>
+            </select>
+         </div>
+
+         <div class="mt-3">
+            <label>Do you have a functional mic for Discord use?</label>
+         </div>
+         <div class="form-check">
+            <input class="form-check-input" type="radio" name="micRadios" id="yesRadio" value="Yes" checked>
+            <label class="form-check-label" for="yesRadio">Yes</label>
+         </div>
+         <div class="form-check">
+            <input class="form-check-input" type="radio" name="micRadios" id="noRadio" value="No">
+            <label class="form-check-label" for="noRadio">No</label>
+         </div>
+
+         <div class="mt-3">
+            <label class="mb-0">What activities are you the most interested in?</label>
+            <small id="interestSub" class="form-text text-muted mb-2">Select all that apply</small>
+         </div>
+         <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="artisan">
+            <label class="form-check-label" for="artisan">Artisan/ Crafting</label>
+         </div>
+         <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="exploration">
+            <label class="form-check-label" for="exploration">PvE & Exploration</label>
+         </div>
+         <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="dungeons">
+            <label class="form-check-label" for="dungeons">PvE - Instanced Content / Dungeons</label>
+         </div>
+         <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="bosses">
+            <label class="form-check-label" for="bosses">PvX - Open World Dungeons / Bosses</label>
+         </div>
+         <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="raiding">
+            <label class="form-check-label" for="raiding">Raiding - 16 & 40-man content</label>
+         </div>
+         <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="caravan">
+            <label class="form-check-label" for="caravan">Caravan Escort Activites</label>
+         </div>
+         <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="homestead">
+            <label class="form-check-label" for="homestead">Homestead / RP</label>
+         </div>
+         <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="siege">
+            <label class="form-check-label" for="siege">Siege Attack / Defense</label>
+         </div>
+         <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="bounty">
+            <label class="form-check-label" for="bounty">Bounty Hunting</label>
+         </div>
+         <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="pvp">
+            <label class="form-check-label" for="pvp">Active PvP</label>
+         </div>
+         <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="research">
+            <label class="form-check-label" for="research">Build & Class research and testing</label>
+         </div>
+
+         <div class="mt-3">
+            <label>Are you applying initially as a Standard member, or do you have aspirations of leadership?</label>
+         </div>
+         <div class="form-check">
+            <input class="form-check-input" type="radio" name="positionRadios" id="standard" value="Standard Membership" checked>
+            <label class="form-check-label" for="standard">Standard Membership</label>
+         </div>
+         <div class="form-check">
+            <input class="form-check-input" type="radio" name="positionRadios" id="leadership" value="Leadership Position">
+            <label class="form-check-label" for="leadership">Leadership Position</label>
+         </div>
+
+         <div class="form-group mt-3">
+            <label for="membership">If interested in a leadership role, which are you most interested in?</label>
+            <select class="form-control" id="membership">
+               <option selected>Just Standard Membership</option>
+               <option>Community Manager</option>
+               <option>Moderator</option>
+               <option>Siege Captain</option>
+               <option>Bounty Hunter Captain</option>
+               <option>Dungeon Master</option>
+               <option>Raid Leader</option>
+               <option>Guild Artisan</option>
+               <option>Class Researcher/ Leader</option>
+            </select>
+         </div>
+
+         <div class="form-group mt-3">
+            <label for="bio">Please tell us about yourself, your personality and why you would be a good fit for the role? (Not required for Standard Membership)</label>
+            <textarea class="form-control" id="bio" rows="3" placeholder="Enter Text Here"></textarea>
+         </div>
+
+         <div class="form-group mt-3">
+            <label for="specialize">If you master a craft, which branch would you specialize in? If you can elongate on your choice or passion, please do -
+            We'd love to hear all about it. No, seriously - the wait for this game is an illness...</label>
+            <textarea class="form-control" id="specialize" rows="3" placeholder="Enter Text Here"></textarea>
+         </div>
+
+         <div class="form-group mt-3">
+            <label for="experience">Please detail prior experience or other talents / skills you can contribute to the Guild</label>
+            <textarea class="form-control" id="experience" rows="3" placeholder="Enter Text Here"></textarea>
+         </div>
+
+         <div class="form-group mt-3">
+            <label for="questions">Any questions or suggestions for us?</label>
+            <textarea class="form-control" id="questions" rows="3" placeholder="Enter Text Here"></textarea>
+         </div>
+
+         <button type="submit" class="btn btn-warning my-3">Submit</button>
+      </form>
    </main>
    <footer class="border-top border-warning">
       <h3>Apostles of the Abyss</h3>
