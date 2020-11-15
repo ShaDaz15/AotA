@@ -38,6 +38,6 @@
 
 /* Home Page */
 
-img {
-  width: 80%;
+#hero img {
+  max-width: 80%;
 }
