@@ -40,4 +40,9 @@
 
 #hero img {
   max-width: 80%;
+  margin-top: 25px;
+}
+
+#features img {
+  width: 130px;
 }
