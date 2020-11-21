@@ -1,3 +1,15 @@
+/* Global */
+
+.fluid-container {
+  border-top: 3px solid rgba(204,155,22,.788);
+}
+
+/* Global Footer */
+
+footer iframe {
+  min-height: 300px;
+}
+
 /* Landing Page */
 
 #fire {
@@ -38,11 +50,30 @@
 
 /* Home Page */
 
+#hero div {
+  height: 100vh;
+  margin-top: -57px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
 #hero img {
-  max-width: 80%;
-  margin-top: 25px;
+  max-width: 100%;
+}
+
+#about .container {
+  min-height: 95vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+#features .container {
+  min-height: 95vh;
 }
 
 #features img {
   width: 130px;
 }
+
