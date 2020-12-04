@@ -14,37 +14,31 @@ if (isset($_POST['discord'])) {
     if (
         !isset($_POST['discord']) ||
         !isset($_POST['accessLevel']) ||
-        !isset($_POST['membership'])
+        !isset($_POST['micRadios']) ||
+        !isset($_POST['interests']) ||
+        !isset($_POST['positionRadios']) ||
+        !isset($_POST['membership']) ||
+        !isset($_POST['bio']) ||
+        !isset($_POST['specialize']) ||
+        !isset($_POST['experience']) ||
+        !isset($_POST['questions'])
     ) {
         problem('We are sorry, but there appears to be a problem with the form you submitted.');
     }
 
-    $discord = $_POST['discord']; // required
-    $accessLevel = $_POST['accessLevel']; // required
-    $membership = $_POST['membership']; // required
-
-   //  $error_message = "";
-   //  $email_exp = '/^[A-Za-z0-9._%-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,4}$/';
-
-   //  if (!preg_match($email_exp, $email)) {
-   //      $error_message .= 'The Email address you entered does not appear to be valid.<br>';
-   //  }
-
-   //  $string_exp = "/^[A-Za-z .'-]+$/";
-
-   //  if (!preg_match($string_exp, $name)) {
-   //      $error_message .= 'The Name you entered does not appear to be valid.<br>';
-   //  }
-
-   //  if (strlen($message) < 2) {
-   //      $error_message .= 'The Message you entered do not appear to be valid.<br>';
-   //  }
-
-   //  if (strlen($error_message) > 0) {
-   //      problem($error_message);
-   //  }
-
-    $email_message = "Form details below.\n\n";
+    $discord = $_POST['discord'];
+    $accessLevel = $_POST['accessLevel'];
+    $interests  = 'None';
+        if(isset($_POST['interests']) && is_array($_POST['interests']) && count($_POST['interests']) > 0){
+            $interests = implode(', ', $_POST['interests']);
+        }
+    $mic = $_POST['micRadios'];
+    $position = $_POST['positionRadios'];
+    $membership = $_POST['membership'];
+    $bio = $_POST['bio'];
+    $specialize = $_POST['specialize'];
+    $experience= $_POST['experience'];
+    $questions = $_POST['questions'];
 
     function clean_string($string)
     {
@@ -52,11 +46,20 @@ if (isset($_POST['discord'])) {
         return str_replace($bad, "", $string);
     }
 
-    $email_message .= "Discord: " . clean_string($discord) . "\n";
-    $email_message .= "Access Level: " . clean_string($accessLevel) . "\n";
-    $email_message .= "Type of Membership: " . clean_string($membership) . "\n";
+    $email_message = "Discord: " . clean_string($discord) . "\n";
+    $email_message .= "Game Access: " . clean_string($accessLevel) . "\n";
+    $email_message .= "Mic: " . clean_string($mic) . "\n";
+    $email_message .= "In-game Interests: " . clean_string($interests) . "\n";
+    $email_message .= "Membership: " . clean_string($position) . "\n";
+    $email_message .= "Leadership Role Wanted: " . clean_string($membership) . "\n";
+    $email_message .= "Personality: " . clean_string($bio) . "\n";
+    $email_message .= "Activites of Interest: " . clean_string($specialize) . "\n";
+    $email_message .= "Past Experience: " . clean_string($experience) . "\n";
+    $email_message .= "Questions for Guild: " . clean_string($questions) . "\n";
 
     @mail("dan.gallagher91@yahoo.com","New Application",$email_message);
+
+    echo($email_message);
 ?>
 
     <!-- include your success message below -->
