@@ -1,0 +1,222 @@
+/* Global */
+
+.fluid-container {
+  border-top: 3px solid rgba(204,155,22,.788);
+}
+
+hr {
+  width: 50px;
+  border: 1px solid #c48c15;
+  border-radius: 5px;
+}
+
+footer {
+  background: radial-gradient(circle, rgba(10,0,0,1) 0%, rgba(15,0,0,1) 100%);
+  font-family: 'Cinzel Decorative', cursive, sans-serif;
+}
+
+footer iframe {
+  min-height: 300px;
+}
+
+header {
+  font-family: 'Cinzel Decorative', cursive, sans-serif;
+  color: #c48c15;
+}
+
+.active {
+  font-weight: 700 !important;
+}
+
+.nav-link:hover {
+  color: #c48c15 !important;
+}
+
+.navbar-brand {
+  color: #c48c15 !important;
+  font-weight: 700;
+}
+
+.sub-brand {
+  color: white !important;
+  text-decoration: none !important;
+  font-size: .8em;
+}
+
+/* Landing Page */
+
+#presite{
+  background: radial-gradient(circle, rgba(10,0,0,1) 0%, rgba(15,0,0,1) 100%);
+  height: 100vh;
+}
+
+#fire {
+  object-fit: cover;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+#landing {
+  position: relative;
+  height: 100vh;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#landing img {
+   max-width: 90%;
+   max-height: 80vh;
+}
+
+#landing button {
+  position: absolute;
+  bottom: 0;
+  font-family: 'Cinzel Decorative', cursive, sans-serif;
+  color: #c48c15;
+  background-color: transparent;
+  border: 1px solid #c48c15;
+  font-size: 2rem;
+  letter-spacing: 10px;
+  border-radius: 3px;
+  margin: 50px;
+}
+
+/* Home Page */
+
+#hero {
+  background-image: url("./assets/home.jpg");
+  background-color: #333333;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#hero .overlay {
+  background-color: rgba(0, 0, 0, .6);
+}
+
+#hero .container {
+  height: 100vh;
+  margin-top: -57px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+#hero img {
+  max-width: 100%;
+}
+
+#about {
+  background: radial-gradient(circle, rgba(0,0,0,1) 0%, rgba(30,30,30,1) 100%);
+}
+
+#about .container {
+  min-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-family: 'Cinzel Decorative', cursive, sans-serif;
+}
+
+#about p {
+  color: #c48c15;
+}
+
+#about h1 {
+  font-size: 3.5em;
+}
+
+#features {
+  background-image: url("./assets/castle.png");
+  background-color: #333333;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#features .overlay {
+  background-color: rgba(0, 0, 0, .8);
+}
+
+#features .container {
+  min-height: 95vh;
+}
+
+#features img {
+  width: 130px;
+}
+
+#features h2 {
+  font-size: 3em;
+  font-family: 'Cinzel Decorative', cursive, sans-serif;
+}
+
+#features h4 {
+  font-family: 'Cinzel Decorative', cursive, sans-serif;
+  color: #c48c15;
+}
+
+#features p {
+  font-size: 0.9em;
+}
+
+/* Apply Page */
+
+#apply {
+  background-image: url("./assets/apply.png");
+  height: 100vh;
+  background-color: #333333;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#apply main {
+  background-color: rgba(0, 0, 0, .8);
+  border-radius: 25px;
+}
+
+/* FAQ Page */
+
+#faq {
+  background-image: url("./assets/faq.png");
+  height: 100vh;
+  background-color: #333333;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#faq main {
+  background-color: rgba(0, 0, 0, .8);
+  border-radius: 25px;
+}
+
+@media (max-width: 576px) {
+  #apply main, #faq main {
+    border-radius: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  #fire {
+    display: none;
+  }
+  #presite {
+  background-image: url("./assets/landing.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  }
+  #presite .overlay {
+  background-color: rgba(0, 0, 0, .7);
+  }
+}
