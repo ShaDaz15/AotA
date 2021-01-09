@@ -74,9 +74,6 @@ try {
     $mail->addAddress('connor.v.finucan@gmail.com', 'Durlz');
     $mail->addAddress('sdcassetta@gmail.com', 'Spud');
 
-    $mail->addAddress('dan.gallagher91@yahoo.com', 'ShaDaz');
-    $mail->addAddress('dgallagher0215@gmail.com', 'ShaDaz 2');
-
     // Content
 
     $body = "<main><h3>Discord:</h3> " . clean_string($discord) . "<br>
