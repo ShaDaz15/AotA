@@ -1,4 +1,11 @@
 <?php
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
+
+require 'PHPMailer/Exception.php';
+require 'PHPMailer/PHPMailer.php';
+require 'PHPMailer/SMTP.php';
+
 if (isset($_POST['discord'])) {
 
     function problem($error)
@@ -46,41 +53,84 @@ if (isset($_POST['discord'])) {
         return str_replace($bad, "", $string);
     }
 
-    $email_message = "Discord: " . clean_string($discord) . "\n\n";
-    $email_message .= "Game Access: " . clean_string($accessLevel) . "\n\n";
-    $email_message .= "Mic: " . clean_string($mic) . "\n\n";
-    $email_message .= "In-game Interests: " . clean_string($interests) . "\n\n";
-    $email_message .= "Membership: " . clean_string($position) . "\n\n";
-    $email_message .= "Leadership Role Wanted: " . clean_string($membership) . "\n\n";
-    $email_message .= "Personality: " . clean_string($bio) . "\n\n";
-    $email_message .= "Activites of Interest: " . clean_string($specialize) . "\n\n";
-    $email_message .= "Past Experience: " . clean_string($experience) . "\n\n";
-    $email_message .= "Questions for Guild: " . clean_string($questions) . "\n\n";
+    $mail = new PHPMailer(true);
 
-    $to = "magicofgaia@gmail.com, stokes.t.spencer@gmail.com, darktemplar260@gmail.com, bnieman741@gmail.com, connor.v.finucan@gmail.com";
-    $subject = "New Guild Applicaiton";
-    $headers = "From: <apostlesoftheabyss@gmail.com>" . "\r\n";
+try {
 
-    @mail($to,$subject,$email_message,$headers);
+    $mail->isSMTP();
+    $mail->Host       = 'apostlesoftheabyss.com';
+    $mail->SMTPAuth   = true;
+    $mail->Username   = 'admin@apostlesoftheabyss.com';
+    $mail->Password   = '+23@[bb#@r}1';
+    $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
+    $mail->Port       = 465;
+
+    $mail->setFrom('admin@apostlesoftheabyss.com', 'ApostlesoftheAbyss');
+
+    $mail->addAddress('magicofgaia@gmail.com', 'Kino');
+    $mail->addAddress('darktemplar260@gmail.com', 'Jade');
+    $mail->addAddress('stokes.t.spencer@gmail.com', 'Haldol');
+    $mail->addAddress('bnieman741@gmail.com', 'Billy');
+    $mail->addAddress('connor.v.finucan@gmail.com', 'Durlz');
+    $mail->addAddress('sdcassetta@gmail.com', 'Spud');
+
+    $mail->addAddress('dan.gallagher91@yahoo.com', 'ShaDaz');
+    $mail->addAddress('dgallagher0215@gmail.com', 'ShaDaz 2');
+
+    // Content
+
+    $body = "<main><h3>Discord:</h3> " . clean_string($discord) . "<br>
+    <h3>Game Access:</h3> " . clean_string($accessLevel) . "<br>
+    <h3>Mic:</h3> " . clean_string($mic) . "<br>
+    <h3>In-game Interests:</h3> " . clean_string($interests) . "<br>
+    <h3>Membership:</h3> " . clean_string($position) . "<br>
+    <h3>Leadership Role Wanted:</h3> " . clean_string($membership) . "<br>
+    <h3>Personality:</h3> " . clean_string($bio) . "<br>
+    <h3>Activites of Interest:</h3> " . clean_string($specialize) . "<br>
+    <h3>Past Experience:</h3> " . clean_string($experience) . "<br>
+    <h3>Questions for Guild:</h3> " . clean_string($questions) . "</main>";
+
+    $mail->isHTML(true);
+    $mail->Subject = 'New Guild Application from: ' . clean_string($discord);
+    $mail->Body    = $body;
+    $mail->AltBody = strip_tags($body);
+
+    $mail->send();
+
+} catch (Exception $e) {
+    echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
+}
+
+}
 ?>
 
 <!doctype html>
 <html lang="en">
 
 <head>
+   <!-- Global site tag (gtag.js) - Google Analytics -->
+   <script async src="https://www.googletagmanager.com/gtag/js?id=G-Y1NT7093LG"></script>
+   <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+   gtag('js', new Date());
+
+   gtag('config', 'G-Y1NT7093LG');
+   </script>
    <!-- Required meta tags -->
    <meta charset="utf-8">
    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
    <link rel="shortcut icon" type="image/jpg" href="assets/favicon-32x32.png">
    <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&display=swap" rel="stylesheet">
+   <script src="https://kit.fontawesome.com/c6e1b22131.js" crossorigin="anonymous"></script>
    <!-- Bootstrap CSS -->
    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
       integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
-   <link rel="stylesheet" href="style.css">
+   <link rel="stylesheet" href="app.css">
    <title>Apostles of the Abyss</title>
 </head>
 
-<body class="text-light bg-dark d-flex flex-column vh-100">
+<body class="text-light d-flex flex-column vh-100" id="application">
    <header class="border-bottom border-warning">
       <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
          <a class="navbar-brand" href="index.html">Apostles of the Abyss</a>
@@ -109,11 +159,11 @@ if (isset($_POST['discord'])) {
    </header>
 
    <main class="m-auto">
-        <div class="container alert alert-secondary py-3 my-sm-5 m-2" role="alert">
+      <div class="container alert alert-dark py-3 my-sm-5 m-2" role="alert">
             <h1 class="alert-heading">Thank you for submitting your application!</h1>
             <br>
             <h3>We will be in touch with you shortly. Please make sure to join our discord <a href="https://discord.com/channels/735220428397609023/735220428645204097" class="alert-link">here</a>.</h3>
-        </div>
+      </div>
    </main>
 
    <footer class="fluid-container mt-auto">
@@ -123,9 +173,9 @@ if (isset($_POST['discord'])) {
                <h3 class="my-4">Apostles of the Abyss</h3>
                <h5 class="my-4">An Ashes of Creation Guild</h5>
                <h5 class="my-4">Find Us Here</h5>
-               <a href="https://twitter.com/AbyssApostles">Twitter</a>
-               <a href="https://www.twitch.tv/apostlesoftheabyss">Twitch</a>
-               <a href="https://discord.com/channels/735220428397609023/735220428645204097">Discord</a>
+               <a href="https://twitter.com/AbyssApostles"><i class="fab fa-twitter"></i></a>
+               <a href="https://www.twitch.tv/apostlesoftheabyss"><i class="fab fa-twitch"></i></a>
+               <a href="https://discord.com/channels/735220428397609023/735220428645204097"><i class="fab fa-discord"></i></a>
             </div>
             <div class="col-md-6">
                <iframe src="https://discordapp.com/widget?id=735220428397609023&amp;theme=dark" width="100%" height="100%"
@@ -146,7 +196,3 @@ if (isset($_POST['discord'])) {
 </body>
 
 </html>
-
-<?php
-}
-?>

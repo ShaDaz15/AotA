@@ -19,6 +19,12 @@ footer iframe {
   min-height: 300px;
 }
 
+i {
+  font-size: 25px;
+  margin: 5px 15px;
+  color: #2bceff;
+}
+
 header {
   font-family: 'Cinzel Decorative', cursive, sans-serif;
   color: #c48c15;
@@ -199,6 +205,21 @@ header {
   background-color: rgba(0, 0, 0, .8);
   border-radius: 25px;
 }
+
+/* Application Page */
+
+#application {
+  background-image: url("./assets/seige.jpg");
+  background-position: bottom;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#application .overlay {
+  background-color: rgba(0, 0, 0, .8);
+}
+
+/* Media Queries */
 
 @media (max-width: 576px) {
   #apply main, #faq main {
